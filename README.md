@@ -7,14 +7,14 @@
 - Aar file created
 
 # How To Use
-- Include Library in your project
+#### Include Library in your project
 
 just include the following line your build.gradle (Module:app) file and sync project.
 
-implementation 'com.github.vivekmaheshsahu:sdkTask:Tag'
+`implementation 'com.github.vivekmaheshsahu:sdkTask:Tag'`
 
 After including the library you have to do function call with its parameter
 
-GetRepo.getRepos("android", "rakutentech")
+`GetRepo.getRepos("android", "rakutentech")`
 
 Please Report any issue or suggestions if you have.
