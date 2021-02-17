@@ -51,17 +51,15 @@ class GetRepo {
                     if (response.isSuccessful) {
                         for (repo in response.body()!!.items!!) {
                             repos.add(repo)
-                            println("Success")
+                            Log.d("TAG","Success");
                         }
                     } else {
-                        println("Error" + response.message())
                         Log.e(ContentValues.TAG, response.message())
                     }
                 }
 
                 override fun onFailure(call: Call<RepoResponse?>, t: Throwable) {
                     Log.e(ContentValues.TAG, t.message)
-                    println("Failure" + t.message)
                 }
             })
             return repos
