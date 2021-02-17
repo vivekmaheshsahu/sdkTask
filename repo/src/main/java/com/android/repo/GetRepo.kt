@@ -13,13 +13,26 @@ import java.util.*
 
 class GetRepo {
 
+    /**
+     *  performing network call using retrofit and list of model is providing in response after executing function
+     */
+
     private val url = "https://api.github.com/search/repositories?q=android+org:rakutentech"
 
     companion object {
         private val gson = GsonBuilder().create()
         private val okHttpClientBuilder = OkHttpClient.Builder()
+
+        /**
+         * @param platform
+         * @param organizationName
+         * this are the two different parameter provided to function if function is missing parameter
+         * then it will be providing empty list
+         */
+
         fun getRepos(platform: String?, organizationName: String?): Any? {
             if (platform == null || organizationName == null) {
+                Log.d("TAG","invalid input to function")
                 return ArrayList<Any?>()
             }
             val repos: MutableList<RepoModel?> = ArrayList()
